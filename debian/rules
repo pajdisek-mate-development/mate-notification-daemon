@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+
+DEB_DH_INSTALL_ARGS += --list-missing
+
+DEB_CONFIGURE_SCRIPT := ./autogen.sh
+
+DEB_CONFIGURE_EXTRA_FLAGS += --disable-static \
+							--libexecdir=/usr/lib/mate-notification-daemon
+
+binary-install/mate-notification-daemon::
+	rm -rf debian/mate-notification-daemon/usr/lib/mate-notification-daemon/engines/*.la
+
+get-orig-source:
+	uscan --noconf --force-download --rename --download-current-version --destdir=..
