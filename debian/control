@@ -1,10 +1,12 @@
 Source: mate-notification-daemon
 Section: x11
 Priority: optional
-Maintainer: Stefano Karapetsas <stefano@karapetsas.com>
-Uploaders: Steve Zesch <stevezesch2@gmail.com>
-Build-Depends: cdbs,
-               debhelper (>= 8),
+Maintainer: MATE Packaging Team <pkg-mate-team@lists.alioth.debian.org>
+Uploaders: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>,
+           Stefano Karapetsas <stefano@karapetsas.com>,
+           Mike Gabriel <sunweaver@debian.org>,
+Build-Depends: debhelper (>= 9),
+               mate-common,
                libglib2.0-dev,
                libx11-dev,
                libgtk2.0-dev,
@@ -14,16 +16,17 @@ Build-Depends: cdbs,
                libcanberra-gtk-dev,
                libnotify-dev,
                intltool,
-               mate-common
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://www.mate-desktop.org/
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-mate/mate-notification-daemon.git;a=summary
+Vcs-Git: git://anonscm.debian.org/pkg-mate/mate-notification-daemon.git
 
 Package: mate-notification-daemon
 Architecture: any
 Depends: ${shlibs:Depends},
-         ${misc:Depends}
+         ${misc:Depends},
 Provides: notification-daemon
-Description: daemon to displays passive pop-up notifications
+Description: Daemon to displays passive pop-up notifications
  mate-notification-daemon displays passive pop-up notifications, as per
  the Desktop Notifications Specification.
  .
@@ -39,8 +42,8 @@ Section: debug
 Priority: extra
 Architecture: any
 Depends: ${misc:Depends},
-         mate-notification-daemon (= ${binary:Version})
-Description: daemon to display passive pop-up notifications (debugging symbols)
+         mate-notification-daemon (= ${binary:Version}),
+Description: Daemon to display passive pop-up notifications (debugging symbols)
  This package contains debugging symbols for the mate-notification-daemon
  package. It is provided to help debugging problems in the daemon. The
  debugging symbols are installed in /usr/lib/debug and will automatically be
