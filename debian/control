@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 9),
                libcanberra-gtk-dev,
                libnotify-dev,
                intltool,
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://www.mate-desktop.org/
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-mate/mate-notification-daemon.git;a=summary
 Vcs-Git: git://anonscm.debian.org/pkg-mate/mate-notification-daemon.git
@@ -27,7 +27,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Provides: notification-daemon
-Description: Daemon to displays passive pop-up notifications
+Description: daemon for displaying passive pop-up notifications
  mate-notification-daemon displays passive pop-up notifications, as per
  the Desktop Notifications Specification.
  .
@@ -37,16 +37,23 @@ Description: Daemon to displays passive pop-up notifications
  work with a dialog box that they must close.  Passive popups can
  automatically disappear after a short period of time, as per the
  Desktop Notifications spec.
- 
+
 Package: mate-notification-daemon-dbg
 Section: debug
 Priority: extra
 Architecture: any
 Depends: ${misc:Depends},
          mate-notification-daemon (= ${binary:Version}),
-Description: Daemon to display passive pop-up notifications (debugging symbols)
- This package contains debugging symbols for the mate-notification-daemon
- package. It is provided to help debugging problems in the daemon. The
- debugging symbols are installed in /usr/lib/debug and will automatically be
- used by gdb.
-
+Description: daemon for displaying passive pop-up notifications (debugging symbols)
+ mate-notification-daemon displays passive pop-up notifications, as per
+ the Desktop Notifications Specification.
+ .
+ The Desktop Notifications Specification provides a standard way of
+ doing passive pop-up notifications on the Linux desktop. These are
+ designed to notify the user of something without interrupting their
+ work with a dialog box that they must close.  Passive popups can
+ automatically disappear after a short period of time, as per the
+ Desktop Notifications spec.
+ .
+ The debugging symbols are installed in /usr/lib/debug and will
+ automatically be used by gdb.
