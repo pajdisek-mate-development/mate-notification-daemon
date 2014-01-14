@@ -67,7 +67,7 @@ License:
  modifications, as long as this notice is preserved.
 
 Files: po/Makefile.in.in
-Coypright: 1995-1997, Ulrich Drepper <drepper@gnu.ai.mit.edu>
+Copyright: 1995-1997, Ulrich Drepper <drepper@gnu.ai.mit.edu>
            2004-2008 Rodney Dawes <dobey.pwns@gmail.com>
 License:
  This file may be copied and used freely without restrictions.  It may
@@ -143,7 +143,7 @@ License: GPL-2+
 
 Files: configure
 Copyright: 1992-2012, Free Software Foundation, Inc.
-Files:
+License:
  This configure script is free software; the Free Software Foundation
  gives unlimited permission to copy, distribute and modify it.
 
