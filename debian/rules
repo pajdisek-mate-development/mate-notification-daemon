@@ -1,18 +1,19 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --with autoreconf
+	dh $@
 
 override_dh_install:
 	rm -rfv debian/tmp/usr/lib/mate-notification-daemon/engines/*.la
 	dh_install --list-missing
 
 override_dh_auto_configure:
+	NOCONFIGURE=1 ./autogen.sh
 	dh_auto_configure -- \
-		--libexecdir=/usr/lib/mate-notification-daemon
+	    --libexecdir=/usr/lib/$(shell dpkg-architecture -qDEB_BUILD_MULTIARCH)/mate-notification-daemon/
 
 override_dh_strip:
-	dh_strip --dbg-package=mate-notification-dbg
+	dh_strip --dbg-package=mate-notification-daemon-dbg
 
 get-orig-source:
 	uscan --noconf --force-download --rename --download-current-version --destdir=..
