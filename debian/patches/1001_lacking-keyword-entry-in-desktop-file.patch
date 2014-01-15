@@ -1,0 +1,8 @@
+--- a/src/capplet/mate-notification-properties.desktop.in
++++ b/src/capplet/mate-notification-properties.desktop.in
+@@ -8,4 +8,5 @@
+ StartupNotify=true
+ Categories=GTK;Settings;DesktopSettings;
+ OnlyShowIn=MATE;
++Keywords=MATE;Notification;Theme;
+ 
