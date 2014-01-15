@@ -1,5 +1,5 @@
 mate-notification-daemon (1.6.1-1) UNRELEASED; urgency=low
 
-  * Initial release. (Close: #733036).
+  * Initial release. (Closes: #733036).
 
  -- Stefano Karapetsas <stefano@karapetsas.com>  Fri, 25 Oct 2013 01:10:23 +0200
