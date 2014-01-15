@@ -1,3 +1,6 @@
+Description: Add keywords entry to .desktop file.
+Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Forwarded: https://github.com/mate-desktop/mate-notification-daemon/issues/27
 --- a/src/capplet/mate-notification-properties.desktop.in
 +++ b/src/capplet/mate-notification-properties.desktop.in
 @@ -8,4 +8,5 @@
