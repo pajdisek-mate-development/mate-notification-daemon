@@ -48,32 +48,6 @@ Copyright: 2008, Martin Sourada
            2012, Stefano Karapetsas <stefano@karapetsas.com>
 License: GPL-3+
 
-Files: macros/intltool.m4
-Copyright: 2001, Eazel, Inc.
-License: GPL-2+
-
-Files: macros/libtool.m4
-Copyright: 1996-2011, Free Software Foundation, Inc.
-License: GPL-2+
-
-Files: macros/ltoptions.m4
-       macros/ltsugar.m4
-       macros/ltversion.m4
-       macros/lt~obsolete.m4
-Copyright: 2004-2009, Free Software Foundation, Inc.
-License:
- This file is free software; the Free Software Foundation gives
- unlimited permission to copy and/or distribute it, with or without
- modifications, as long as this notice is preserved.
-
-Files: po/Makefile.in.in
-Copyright: 1995-1997, Ulrich Drepper <drepper@gnu.ai.mit.edu>
-           2004-2008 Rodney Dawes <dobey.pwns@gmail.com>
-License:
- This file may be copied and used freely without restrictions.  It may
- be used in projects which are not available under a GNU Public License,
- but which still want to provide support for the GNU gettext functionality.
-
 Files: po/*.po
 Copyright: 2005-2011, THE PACKAGE's COPYRIGHT HOLDER
 License: GPL-2+
@@ -106,54 +80,9 @@ Comment:
  (non-present) file header. Using license information from
  COPYING file.
 
-Files: Makefile.in
-       data/Makefile.in
-       src/themes/coco/Makefile.in
-       src/themes/slider/Makefile.in
-       src/themes/Makefile.in
-       src/themes/nodoka/Makefile.in
-       src/themes/standard/Makefile.in
-       src/daemon/Makefile.in
-       src/Makefile.in
-       src/capplet/Makefile.in
-Copyright: 1994-2013, Freesoftware Foundation, Inc.
-License:
- This Makefile.in is free software; the Free Software Foundation
- gives unlimited permission to copy and/or distribute it,
- with or without modifications, as long as this notice is preserved.
- .
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY, to the extent permitted by law; without
- even the implied warranty of MERCHANTABILITY or FITNESS FOR A
- PARTICULAR PURPOSE.
-
-Files: compile
-Copyright: 1999-2013, Tom Tromey <tromey@cygnus.com>
-License: GPL-2+
-
-Files: config.guess
-       config.sub
-Copyright: 1992-2013, Free Software Foundation, Inc.
-License: GPL-3+
-
-Files: decomp
-       missing
-Copyright: 1996-2013, Free Software Foundation, Inc.
-License: GPL-2+
-
-Files: configure
-Copyright: 1992-2012, Free Software Foundation, Inc.
-License:
- This configure script is free software; the Free Software Foundation
- gives unlimited permission to copy, distribute and modify it.
-
-Files: install-sh
-Copyright: 1994, X Consortium
-License: MIT-X11
-
 Files: debian/*
-Copyright: 2011-2013, Stefano Karapetsas <stefano@karapetsas.com>
-           2013, Mike Gabriel <sunweaver@debian.org>
+Copyright: 2011-2014, Stefano Karapetsas <stefano@karapetsas.com>
+           2014, Mike Gabriel <sunweaver@debian.org>
 License: GPL-2+ or GPL-3+
 
 License: GPL-2+
@@ -189,26 +118,3 @@ License: GPL-3+
  .
  On Debian systems, the complete text of the GNU General
  Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".  
-
-License: MIT-X11
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to
- deal in the Software without restriction, including without limitation the
- rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
- sell copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- .
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
- .
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
- X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
- AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
- TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- .
- Except as contained in this notice, the name of the X Consortium shall not
- be used in advertising or otherwise to promote the sale, use or other deal-
- ings in this Software without prior written authorization from the X Consor-
- tium.
