@@ -1,6 +1,17 @@
 mate-notification-daemon (1.8.0-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * debian/watch:
+    + Use tagged CGit tarball snapshots as upstream source.
+  * debian/copyright:
+    + Adapt to files in new upstream tarball.
+  * debian/control:
+    + Replace B-D libmatewnck-dev with libwnck-dev.
+    + Drop B-D: dh-autoreconf.
+  * debian/patches:
+    + Drop patch: 1001_lacking-keyword-entry-in-desktop-file.patch. Fixed upstream.
+  * lintian:
+    + Drop unused overrides.
 
  -- Mike Gabriel <sunweaver@debian.org>  Wed, 12 Mar 2014 13:26:42 +0100
 
