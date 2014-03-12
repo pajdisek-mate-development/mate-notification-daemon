@@ -1,4 +1,4 @@
-mate-notification-daemon (1.8.0-1) UNRELEASED; urgency=low
+mate-notification-daemon (1.8.0-1) unstable; urgency=low
 
   * New upstream release.
   * debian/watch:
@@ -13,7 +13,7 @@ mate-notification-daemon (1.8.0-1) UNRELEASED; urgency=low
   * lintian:
     + Drop unused overrides.
 
- -- Mike Gabriel <sunweaver@debian.org>  Wed, 12 Mar 2014 13:26:42 +0100
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 12 Mar 2014 13:38:42 +0100
 
 mate-notification-daemon (1.6.1-1) unstable; urgency=low
 
