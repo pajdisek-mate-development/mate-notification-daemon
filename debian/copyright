@@ -1,7 +1,7 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: mate-notification-daemon
 Upstream-Contact: Stefano Karapetsas <stefano@karapetsas.com>
-Source: http://pub.mate-desktop.org/releases/
+Source: http://git.mate-desktop.org/mate-notification-daemon/
 
 Files: src/daemon/daemon.c
        src/daemon/daemon.h
