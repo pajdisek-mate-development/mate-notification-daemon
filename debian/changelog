@@ -1,9 +1,19 @@
-mate-notification-daemon (1.8.0-2) UNRELEASED; urgency=low
+mate-notification-daemon (1.8.0-2) unstable; urgency=low
 
+  * debian/rules:
+    + Enable parallel builds.
+    + Turn on compiler commands during package build (configure option:
+      --disable-silent-rules).
+    + Fix cleaning up of unwanted .la files during build.
+  * debian/control:
+    + Improve LONG_DESCRIPTION of dbg:package
   * debian/copyright:
     + Point to git.mate-desktop.org in Source: field.
+  * man pages:
+    + Use mate-notification-properties man page as provided by upstream
+      since 1.8.0.
 
- -- Mike Gabriel <sunweaver@debian.org>  Thu, 13 Mar 2014 16:32:39 +0100
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 02 May 2014 10:24:53 +0200
 
 mate-notification-daemon (1.8.0-1) unstable; urgency=low
 
