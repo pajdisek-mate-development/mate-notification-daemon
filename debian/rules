@@ -6,6 +6,7 @@ DHFLAGS=--parallel
 	dh $@ $(DHFLAGS)
 
 override_dh_install:
+	rm -f debian/tmp/usr/lib/*/*/*/*.a
 	rm -rfv debian/tmp/usr/lib/*/mate-notification-daemon/engines/*.la
 	dh_install --fail-missing
 
