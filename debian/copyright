@@ -49,11 +49,18 @@ Copyright: 2008, Martin Sourada
 License: GPL-3+
 
 Files: po/*.po
+       po/Rules-quot
+       po/boldquot.sed
+       po/en@boldquot.header
+       po/en@quot.header
+       po/gnome-copyrights.txt
+       po/insert-header.sin
+       po/quot.sed
 Copyright: 2005-2011, THE PACKAGE's COPYRIGHT HOLDER
 License: GPL-2+
  Using license information from COPYING file.
 
-Files: Makefile.am
+Files: .tx/config
        data/Makefile.am
        data/mate-notification-daemon.convert
        data/org.*
@@ -66,6 +73,10 @@ Files: Makefile.am
        src/daemon/Makefile.am
        src/Makefile.am
        src/capplet/Makefile.am
+       src/capplet/mate-notification-properties.1
+       src/capplet/mate-notification-properties.desktop.in
+       src/capplet/mate-notification-properties.ui
+       src/daemon/notificationdaemon.xml
        acinclude.m4
        aclocal.m4
        autogen.sh
@@ -73,6 +84,13 @@ Files: Makefile.am
        configure.ac
        po/LINGUAS
        po/POTFILES.in
+       AUTHORS
+       COPYING
+       ChangeLog
+       Makefile.am
+       NEWS
+       NEWS.GNOME
+       README
 Copyright: *No copyright*
 License: GPL-2+
 Comment:
