@@ -1,3 +1,24 @@
+mate-notification-daemon (1.8.1-1) unstable; urgency=medium
+
+  [ Vangelis Mouhtsis ]
+  * debian/rules:
+    + Replace on dh_install --list-missing -> --fail-missing
+    + Remove non-packaged *.a files after build.
+  * debian/control:
+    + Bump Standards: to 3.9.6. No changes needed.
+
+  [ Mike Gabriel ]
+  * New upstream release.
+  * debian/control:
+    + Add Vangelis Mouthsis to Uploaders: field.
+  * debian/rules:
+    + Use upstream's NEWS file as upstream ChangeLog.
+  * debian/copyright:
+    + Really mention all upstream files.
+    + Remove information for files not shipped in upstream sources anymore.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 23 Oct 2014 13:20:03 +0200
+
 mate-notification-daemon (1.8.0-2) unstable; urgency=low
 
   * debian/rules:
