@@ -1,3 +1,11 @@
+mate-notification-daemon (1.8.1-2) unstable; urgency=medium
+
+  * debian/rules:
+    - Install mate-notification-daemon executable to non-multi-arch
+      libexecdir. (Closes: #769419).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 12 Dec 2014 11:13:40 +0100
+
 mate-notification-daemon (1.8.1-1) unstable; urgency=medium
 
   [ Vangelis Mouhtsis ]
