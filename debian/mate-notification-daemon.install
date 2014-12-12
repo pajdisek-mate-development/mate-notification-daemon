@@ -7,5 +7,5 @@ usr/share/dbus-1/
 usr/share/locale/
 usr/share/man/
 usr/bin/mate-notification-properties
-usr/lib/*/mate-notification-daemon/mate-notification-daemon
+usr/lib/mate-notification-daemon/mate-notification-daemon
 usr/lib/*/mate-notification-daemon/engines/*.so
