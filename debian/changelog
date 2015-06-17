@@ -1,14 +1,21 @@
-mate-notification-daemon (1.10.0-1) UNRELEASED; urgency=medium
+mate-notification-daemon (1.10.0-1~exp1) experimental; urgency=medium
 
+  [ Martin Wimpress ]
   * New upstream release.
   * debian/control:
-    + Add mate-notification-daemon-common
+    + Add bin:package mate-notification-daemon-common.
   * debian/mate-notification-daemon.install
-    + Remove entries now in mate-notification-deamon-common.install
+    + Remove entries now in mate-notification-deamon-common.install.
   * debian/rules:
-    + Add --disable-static and --with-gtk=2.0
+    + Add --disable-static and --with-gtk=2.0.
+  * Whitespace cleanup.
+  * Processed with wrap-and-sort.
 
- -- Martin Wimpress <code@flexion.org>  Thu, 12 Jun 2015 03:06:07 +0100
+  [ Mike Gabriel ]
+  * debian/control:
+    + Versioned B-D: mate-common (>= 1.10).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 17 Jun 2015 10:10:02 +0200
 
 mate-notification-daemon (1.8.2-2) unstable; urgency=medium
 
