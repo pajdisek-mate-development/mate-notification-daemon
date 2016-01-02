@@ -1,11 +1,8 @@
-mate-notification-daemon (1.12.1-1) unstable; urgency=medium
+mate-notification-daemon (1.12.1-1) UNRELEASED; urgency=medium
 
-  [ Martin Wimpress ]
   * New upstream release.
-  * debian/control:
-    + Versioned B-D: mate-common (>= 1.12).
 
- -- Mike Gabriel <sunweaver@debian.org>  Thu, 31 Dec 2015 14:51:37 +0100
+ -- Martin Wimpress <code@flexion.org>  Mon, 09 Nov 2015 20:01:22 +0000
 
 mate-notification-daemon (1.10.2-1) unstable; urgency=medium
 
