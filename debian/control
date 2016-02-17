@@ -19,8 +19,8 @@ Build-Depends: debhelper (>= 9),
                mate-common (>= 1.12),
 Standards-Version: 3.9.6
 Homepage: http://www.mate-desktop.org/
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-mate/mate-notification-daemon.git;a=summary
-Vcs-Git: git://anonscm.debian.org/pkg-mate/mate-notification-daemon.git
+Vcs-Browser: https://anonscm.debian.org/git/pkg-mate/mate-notification-daemon.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-mate/mate-notification-daemon.git
 
 Package: mate-notification-daemon
 Architecture: any
