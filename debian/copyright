@@ -59,7 +59,6 @@ Comment:
 
 Files: .tx/config
        data/Makefile.am
-       data/mate-notification-daemon.convert
        data/org.*
        data/icons/*
        src/themes/coco/Makefile.am
