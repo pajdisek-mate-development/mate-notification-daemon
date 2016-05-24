@@ -1,9 +1,3 @@
-mate-notification-daemon (1.14.0-1) UNRELEASED; urgency=medium
-
-  [ Martin Wimpress ]
-
- -- Martin Wimpress <code@flexion.org>  Thu, 05 May 2016 12:29:27 +0100
-
 mate-notification-daemon (1.12.1-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
