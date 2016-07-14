@@ -1,3 +1,15 @@
+mate-notification-daemon (1.14.1-1) unstable; urgency=medium
+
+  [ Vangelis Mouhtsis ]
+  * debian/{control,rules}:
+    + Don't build dbg:packages anymore.
+      See https://wiki.debian.org/AutomaticDebugPackages.
+
+  [ Martin Wimpress ]
+  * New upstream release.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 14 Jul 2016 12:34:23 +0200
+
 mate-notification-daemon (1.14.0-1) unstable; urgency=medium
 
   [ Vangelis Mouhtsis ]
