@@ -1,6 +1,8 @@
 mate-notification-daemon (1.16.0-1) UNRELEASED; urgency=medium
 
   * New upstream release. (Closes: #769968).
+  * debian/control:
+    + Dependencies updated for MATE 1.16.
 
  -- Martin Wimpress <code@flexion.org>  Fri, 23 Sep 2016 10:46:47 +0100
 
