@@ -1,10 +1,21 @@
-mate-notification-daemon (1.16.0-1) UNRELEASED; urgency=medium
+mate-notification-daemon (1.16.0-1) unstable; urgency=medium
 
+  [ Martin Wimpress ]
   * New upstream release. (Closes: #769968).
+
+  [ Vangelis Mouhtsis ]
+  * debian/changelog:
+    + Fix missing changelog items for 1.15.1-0ubuntu1 upload.
   * debian/control:
     + Dependencies updated for MATE 1.16.
+  * debian/watch:
+    + Update version matching again to _not_ support development releases.
 
- -- Martin Wimpress <code@flexion.org>  Fri, 23 Sep 2016 10:46:47 +0100
+  [ Mike Gabriel ]
+  * debian/control:
+    + Versioned B-D: libgtk-3-dev (>= 3.14).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 02 Oct 2016 22:52:32 +0200
 
 mate-notification-daemon (1.15.1-0ubuntu1) yakkety; urgency=medium
 
