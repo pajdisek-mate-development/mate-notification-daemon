@@ -1,3 +1,10 @@
+mate-notification-daemon (1.16.1-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fix bold formatting in markup parser. (Closes: #846523).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 13 Dec 2016 09:31:57 +0100
+
 mate-notification-daemon (1.16.0-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
