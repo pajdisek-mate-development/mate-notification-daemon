@@ -1,3 +1,15 @@
+mate-notification-daemon (1.18.0-1) UNRELEASED; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/control: Dependencies updated for MATE 1.17.
+  * debian/rules: Remove obsolete --with-gtk=3.0
+  * debian/control: Dependencies updated for MATE 1.18.
+
+  [ Aron Xu ]
+  * New upstream release.
+
+ -- Aron Xu <aron@debian.org>  Wed, 21 Jun 2017 20:50:40 +0800
+
 mate-notification-daemon (1.16.1-1) unstable; urgency=medium
 
   * New upstream release.
