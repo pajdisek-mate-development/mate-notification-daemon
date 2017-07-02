@@ -8,7 +8,15 @@ mate-notification-daemon (1.18.0-1) UNRELEASED; urgency=medium
   [ Aron Xu ]
   * New upstream release.
 
- -- Aron Xu <aron@debian.org>  Wed, 21 Jun 2017 20:50:40 +0800
+  [ Vangelis Mouhtsis ]
+  * debian/compat:
+    + Update compat version.
+  * debian/control:
+    + Bump debhelper version to (>= 10).
+  * debian/rules:
+    + Add new block for override_dh_missing.
+
+ -- Vangelis Mouhtsis <vangelis@gnugr.org>  Sun, 02 Jul 2017 23:40:54 +0300
 
 mate-notification-daemon (1.16.1-1) unstable; urgency=medium
 
