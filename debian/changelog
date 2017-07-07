@@ -12,7 +12,7 @@ mate-notification-daemon (1.18.0-1) UNRELEASED; urgency=medium
   * debian/compat:
     + Update compat version.
   * debian/control:
-    + Bump debhelper version to (>= 10).
+    + Bump debhelper version to (>= 10.3~).
   * debian/rules:
     + Add new block for override_dh_missing.
 
