@@ -15,6 +15,8 @@ mate-notification-daemon (1.18.0-1) UNRELEASED; urgency=medium
     + Bump debhelper version to (>= 10.3~).
   * debian/rules:
     + Add new block for override_dh_missing.
+  * debian/control:
+    + Bump Standards-Version: to 4.0.0. No changes needed.
 
  -- Vangelis Mouhtsis <vangelis@gnugr.org>  Sun, 02 Jul 2017 23:40:54 +0300
 
