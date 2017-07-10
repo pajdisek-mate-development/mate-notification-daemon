@@ -18,7 +18,7 @@ Build-Depends: debhelper (>= 10.3~),
                libwnck-3-dev,
                libx11-dev,
                mate-common (>= 1.18),
-Standards-Version: 3.9.8
+Standards-Version: 4.0.0
 Homepage: http://www.mate-desktop.org/
 Vcs-Browser: https://anonscm.debian.org/git/pkg-mate/mate-notification-daemon.git
 Vcs-Git: https://anonscm.debian.org/git/pkg-mate/mate-notification-daemon.git
