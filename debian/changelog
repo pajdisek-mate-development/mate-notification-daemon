@@ -1,4 +1,4 @@
-mate-notification-daemon (1.18.0-1) UNRELEASED; urgency=medium
+mate-notification-daemon (1.18.0-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
   * debian/control: Dependencies updated for MATE 1.17.
@@ -18,7 +18,11 @@ mate-notification-daemon (1.18.0-1) UNRELEASED; urgency=medium
   * debian/control:
     + Bump Standards-Version: to 4.0.0. No changes needed.
 
- -- Vangelis Mouhtsis <vangelis@gnugr.org>  Sun, 02 Jul 2017 23:40:54 +0300
+  [ Mike Gabriel ]
+  * debian/rules:
+    + Disable autoreconf, handled by autogen.sh.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 25 Jul 2017 10:43:29 +0200
 
 mate-notification-daemon (1.16.1-1) unstable; urgency=medium
 
