@@ -1,3 +1,10 @@
+mate-notification-daemon (1.18.0-2) UNRELEASED; urgency=medium
+
+  * debian/patches: Add
+    0001_fix_high_cpu_usage_with_large_timeouts.patch. (LP: #1450804)
+
+ -- Martin Wimpress <martin.wimpress@ubuntu.com>  Thu, 17 Aug 2017 01:36:17 +0100
+
 mate-notification-daemon (1.18.0-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
