@@ -1,4 +1,10 @@
-mate-notification-daemon (1.19.1-0ubuntu1) bionic; urgency=medium
+mate-notification-daemon (1.20.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Martin Wimpress <martin.wimpress@ubuntu.com>  Wed, 07 Feb 2018 14:03:56 +0000
+
+mate-notification-daemon (1.19.1-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
 
