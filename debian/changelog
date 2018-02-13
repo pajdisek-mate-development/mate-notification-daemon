@@ -1,10 +1,10 @@
-mate-notification-daemon (1.20.0-1) UNRELEASED; urgency=medium
+mate-notification-daemon (1.20.0-0ubuntu1) bionic; urgency=medium
 
   * New upstream release.
 
  -- Martin Wimpress <martin.wimpress@ubuntu.com>  Wed, 07 Feb 2018 14:03:56 +0000
 
-mate-notification-daemon (1.19.1-1) UNRELEASED; urgency=medium
+mate-notification-daemon (1.19.1-0ubuntu1) bionic; urgency=medium
 
   * New upstream release.
 
@@ -72,7 +72,7 @@ mate-notification-daemon (1.16.0-1) unstable; urgency=medium
 
   [ Vangelis Mouhtsis ]
   * debian/changelog:
-    + Fix missing changelog items for 1.15.1-1 upload.
+    + Fix missing changelog items for 1.15.1-0ubuntu1 upload.
   * debian/control:
     + Dependencies updated for MATE 1.16.
   * debian/watch:
@@ -84,7 +84,7 @@ mate-notification-daemon (1.16.0-1) unstable; urgency=medium
 
  -- Mike Gabriel <sunweaver@debian.org>  Sun, 02 Oct 2016 22:52:32 +0200
 
-mate-notification-daemon (1.15.1-1) yakkety; urgency=medium
+mate-notification-daemon (1.15.1-0ubuntu1) yakkety; urgency=medium
 
   * New upstream development release.
   * debian/control:
