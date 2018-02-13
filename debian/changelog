@@ -1,3 +1,23 @@
+mate-notification-daemon (1.20.0-1) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/copyright (already in 1.19.1-0ubuntu1):
+    + Update copyright attributions.
+
+  [ Vangelis Mouhtsis ]
+  * debian/control:
+    + Temporarily have pkg-mate-team ML under Uploaders:.
+    + Update Maintainer: field to debian-mate ML on lists.debian.org.
+    + Rename pretty name of our team -> Debian+Ubuntu MATE Packaging Team.
+    + Bump Standards-Version: to 4.1.3. No changes needed.
+
+  [ Mike Gabriel ]
+  * debian/watch:
+    + Use secure URL to obtain upstream sources.
+  * debian/{control,compat}: Bump DH version level to 11.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 13 Feb 2018 16:56:48 +0100
+
 mate-notification-daemon (1.20.0-0ubuntu1) bionic; urgency=medium
 
   * New upstream release.
