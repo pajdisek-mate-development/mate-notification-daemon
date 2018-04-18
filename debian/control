@@ -29,6 +29,7 @@ Architecture: any
 Depends: mate-notification-daemon-common (= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
+         libglib2.0-bin,
 Provides: notification-daemon,
 Description: daemon to display passive popup notifications
  mate-notification-daemon displays passive popup notifications, as per
