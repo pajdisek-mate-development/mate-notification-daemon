@@ -1,3 +1,15 @@
+mate-notification-daemon (1.20.0-2) unstable; urgency=medium
+
+  * debian/copyright:
+    + Use secure URI for copyright format.
+  * debian/patches:
+    + Add 1001_convert-gvfs-open-to-gio-open.patch. Replace deprecated call
+      to gvfs-open by call to "gio open".
+  * debian/control:
+    + Add D (mate-notification-daemon): libglib2.0-bin (for gio cmdline tool).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 18 Apr 2018 13:28:54 +0200
+
 mate-notification-daemon (1.20.0-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
