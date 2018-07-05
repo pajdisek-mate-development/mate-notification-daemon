@@ -44,7 +44,8 @@ Copyright: 2008, Martin Sourada
            2012, Stefano Karapetsas <stefano@karapetsas.com>
 License: GPL-3+
 
-Files: po/*.po
+Files: mate-notification-daemon.pot
+       po/*.po
        po/Rules-quot
        po/boldquot.sed
        po/en@boldquot.header
@@ -77,6 +78,7 @@ Files: .github/issue_template.md
        acinclude.m4
        autogen.sh
        configure.ac
+       makepot
        po/LINGUAS
        po/POTFILES.in
        AUTHORS
