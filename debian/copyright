@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: MATE Notification Daemon
 Upstream-Contact: Martin Wimpress <martin@mate-desktop.org>
-Source: http://git.mate-desktop.org/mate-notification-daemon/
+Source: https://git.mate-desktop.org/mate-notification-daemon/
 
 Files: src/daemon/daemon.c
        src/daemon/daemon.h
