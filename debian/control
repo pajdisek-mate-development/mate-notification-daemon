@@ -18,7 +18,7 @@ Build-Depends: debhelper (>= 11~),
                libwnck-3-dev,
                libx11-dev,
                mate-common (>= 1.18),
-Standards-Version: 4.1.4
+Standards-Version: 4.3.0
 Homepage: http://www.mate-desktop.org/
 Vcs-Browser: https://salsa.debian.org/debian-mate-team/mate-notification-daemon
 Vcs-Git: https://salsa.debian.org/debian-mate-team/mate-notification-daemon.git
