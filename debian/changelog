@@ -1,3 +1,12 @@
+mate-notification-daemon (1.20.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    + Bump Standards-Version: to 4.3.0. No changes needed.
+    + White-space clean-up at EOF.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 09 Jan 2019 10:28:38 +0100
+
 mate-notification-daemon (1.20.1-1) unstable; urgency=medium
 
   * New upstream release.
