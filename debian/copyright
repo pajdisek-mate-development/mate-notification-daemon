@@ -74,6 +74,7 @@ Files: .github/issue_template.md
        src/capplet/mate-notification-properties.1
        src/capplet/mate-notification-properties.desktop.in
        src/capplet/mate-notification-properties.ui
+       src/daemon/mnd-daemon.c
        src/daemon/notificationdaemon.xml
        acinclude.m4
        autogen.sh
