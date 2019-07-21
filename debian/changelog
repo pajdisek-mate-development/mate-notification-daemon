@@ -1,8 +1,23 @@
-mate-notification-daemon (1.22.0-1) UNRELEASED; urgency=medium
+mate-notification-daemon (1.22.0-1) unstable; urgency=medium
 
+  [ Martin Wimpress ]
   * New upstream release.
+  * debian/patches:
+    + 1001_convert-gvfs-open-to-gio-open.patch. Applied upstream.
+  * debian/control:
+    + Updated for MATE Desktop 1.22
+  * debian/copyright:
+    + Update copyright attributions.
 
- -- Martin Wimpress <martin.wimpress@ubuntu.com>  Mon, 18 Mar 2019 20:30:22 +0000
+  [ Mike Gabriel ]
+  * debian/{compat,control}:
+    + Use debhelper-compat notation. Bump to DH compat level version 12.
+  * debian/control:
+    + Bump Standards-Version: to 4.4.0. No changes needed.
+  * debian/rules:
+    + Drop dbgsym-migration dh_strip override.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 21 Jul 2019 23:49:28 +0200
 
 mate-notification-daemon (1.20.2-1) unstable; urgency=medium
 
