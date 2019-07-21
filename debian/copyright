@@ -59,6 +59,7 @@ Comment:
  Using license information from COPYING file.
 
 Files: .github/issue_template.md
+       .travis.yml
        .tx/config
        data/Makefile.am
        data/org.*
