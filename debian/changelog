@@ -1,3 +1,13 @@
+mate-notification-daemon (1.22.0-2) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/patches:
+    + Add 1000_do_not_disturb.patch. Add do-not-disturb setting.
+    + Rebase 1000_do_not_disturb.patch. Add missing user interface to enable do
+      not disturb.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 02 Sep 2019 16:21:23 +0200
+
 mate-notification-daemon (1.22.0-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
