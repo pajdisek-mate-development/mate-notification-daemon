@@ -1,0 +1,272 @@
+Author: Kyle Brenneman <kyle.brenneman@gmail.com>
+Description: Fix decoding the hints dictionary.
+
+diff --git a/src/daemon/daemon.c b/src/daemon/daemon.c
+index 4a11c2f..d63545b 100644
+--- a/src/daemon/daemon.c
++++ b/src/daemon/daemon.c
+@@ -1382,43 +1382,41 @@ static gboolean notify_daemon_notify_handler(NotifyDaemonNotifications *object,
+ 	 */
+ 
+ 
+-	if (g_variant_lookup(hints, "window-xid", "v", &data))
++	if (g_variant_lookup(hints, "window-xid", "@u", &data))
+ 	{
+ 		window_xid = (Window) g_variant_get_uint32 (data);
++		g_variant_unref(data);
+ 	}
+ 	/* deal with x, and y hints */
+-	else if (g_variant_lookup(hints, "x", "v", &data))
++	else if (g_variant_lookup(hints, "x", "i", &x))
+ 	{
+-		x = g_variant_get_int32 (data);
+-
+-		if (g_variant_lookup(hints, "y", "v", &data))
++		if (g_variant_lookup(hints, "y", "i", &y))
+ 		{
+-			y = g_variant_get_int32 (data);
+ 			use_pos_data = TRUE;
+ 		}
+ 	}
+ 
+-	if (g_variant_lookup(hints, "suppress-sound", "v", &data)) {
+-		if (g_variant_get_type (data) == G_VARIANT_TYPE_BOOLEAN )
++	if (g_variant_lookup(hints, "suppress-sound", "@*", &data))
++	{
++		if (g_variant_is_of_type (data, G_VARIANT_TYPE_BOOLEAN))
+ 		{
+ 			sound_enabled = !g_variant_get_boolean(data);
+ 		}
+-		else if (g_variant_get_type (data) == G_VARIANT_TYPE_INT32)
++		else if (g_variant_is_of_type (data, G_VARIANT_TYPE_INT32))
+ 		{
+-			sound_enabled = (g_variant_get_int32(data) != 0);
++			sound_enabled = (g_variant_get_int32(data) == 0);
+ 		}
+ 		else
+ 		{
+-			g_warning ("suppress-sound is of type %s (expected bool or int)\n", g_type_name (G_VALUE_TYPE (data)));
++			g_warning ("suppress-sound is of type %s (expected bool or int)\n", g_variant_get_type_string(data));
+ 		}
++		g_variant_unref(data);
+ 	}
+ 
+ 	if (sound_enabled)
+ 	{
+-		if (g_variant_lookup(hints, "sound-file", "v", &data))
++		if (g_variant_lookup(hints, "sound-file", "s", &sound_file))
+ 		{
+-			sound_file = g_variant_dup_string (data, NULL);
+-
+ 			if (*sound_file == '\0' || !g_file_test (sound_file, G_FILE_TEST_EXISTS))
+ 			{
+ 				g_free (sound_file);
+@@ -1445,46 +1443,37 @@ static gboolean notify_daemon_notify_handler(NotifyDaemonNotifications *object,
+ 
+ 	pixbuf = NULL;
+ 
+-	if (g_variant_lookup(hints, "image_data", "v", &data))
++	if (g_variant_lookup(hints, "image_data", "@(iiibiiay)", &data))
+ 	{
+ 		pixbuf = _notify_daemon_pixbuf_from_data_hint (data);
++		g_variant_unref(data);
+ 	}
+-	else if (g_variant_lookup(hints, "image-data", "v", &data))
++	else if (g_variant_lookup(hints, "image-data", "@(iiibiiay)", &data))
+ 	{
+ 		pixbuf = _notify_daemon_pixbuf_from_data_hint (data);
++		g_variant_unref(data);
+ 	}
+-	else if (g_variant_lookup(hints, "image_path", "v", &data))
++	else if (g_variant_lookup(hints, "image_path", "@s", &data))
+ 	{
+-		if (g_variant_get_type(data) == G_VARIANT_TYPE_STRING)
+-		{
+-			const char *path = g_variant_get_string (data, NULL);
+-			pixbuf = _notify_daemon_pixbuf_from_path (path);
+-		}
+-		else
+-		{
+-			g_warning ("notify_daemon_notify_handler expected image_path hint to be of type string");
+-		}
++		const char *path = g_variant_get_string (data, NULL);
++		pixbuf = _notify_daemon_pixbuf_from_path (path);
++		g_variant_unref(data);
+ 	}
+-	else if (g_variant_lookup(hints, "image-path", "v", &data))
++	else if (g_variant_lookup(hints, "image-path", "@s", &data))
+ 	{
+-		if (g_variant_get_type(data) == G_VARIANT_TYPE_STRING)
+-		{
+-			const char *path = g_variant_get_string (data, NULL);
+-			pixbuf = _notify_daemon_pixbuf_from_path (path);
+-		}
+-		else
+-		{
+-			g_warning ("notify_daemon_notify_handler expected image-path hint to be of type string");
+-		}
++		const char *path = g_variant_get_string (data, NULL);
++		pixbuf = _notify_daemon_pixbuf_from_path (path);
++		g_variant_unref(data);
+ 	}
+ 	else if (*icon != '\0')
+ 	{
+ 		pixbuf = _notify_daemon_pixbuf_from_path (icon);
+ 	}
+-	else if (g_variant_lookup(hints, "icon_data", "v", &data))
++	else if (g_variant_lookup(hints, "icon_data", "@(iiibiiay)", &data))
+ 	{
+ 		g_warning("\"icon_data\" hint is deprecated, please use \"image_data\" instead");
+ 		pixbuf = _notify_daemon_pixbuf_from_data_hint (data);
++		g_variant_unref(data);
+ 	}
+ 
+ 	if (pixbuf != NULL)
+diff --git a/src/themes/coco/coco-theme.c b/src/themes/coco/coco-theme.c
+index f52729b..94f38e3 100644
+--- a/src/themes/coco/coco-theme.c
++++ b/src/themes/coco/coco-theme.c
+@@ -680,16 +680,14 @@ set_notification_timeout(GtkWindow *nw, glong timeout)
+ void set_notification_hints(GtkWindow *nw, GVariant *hints)
+ {
+ 	WindowData *windata = g_object_get_data(G_OBJECT(nw), "windata");
+-	GVariant *value = NULL, *icon_value = NULL;
++	guint8 urgency;
++	gboolean action_icons;
+ 
+ 	g_assert(windata != NULL);
+ 
+-	g_variant_lookup(hints, "urgency", "v", &value);
+-	g_variant_lookup(hints, "action-icons", "v", &icon_value);
+-
+-	if (value != NULL && g_variant_get_type(value) == G_VARIANT_TYPE_BYTE)
++	if (g_variant_lookup(hints, "urgency", "y", &urgency))
+ 	{
+-		windata->urgency = g_variant_get_byte(value);
++		windata->urgency = urgency;
+ 
+ 		if (windata->urgency == URGENCY_CRITICAL) {
+ 			gtk_window_set_title(GTK_WINDOW(nw), "Critical Notification");
+@@ -699,9 +697,9 @@ void set_notification_hints(GtkWindow *nw, GVariant *hints)
+ 	}
+ 
+ 	/* Determine if action-icons have been requested */
+-	if (icon_value != NULL && g_variant_get_type(icon_value) == G_VARIANT_TYPE_BOOLEAN)
++	if (g_variant_lookup(hints, "action-icons", "b", &action_icons))
+ 	{
+-		windata->action_icons = g_variant_get_boolean(icon_value);
++		windata->action_icons = action_icons;
+ 	}
+ }
+ 
+diff --git a/src/themes/nodoka/nodoka-theme.c b/src/themes/nodoka/nodoka-theme.c
+index 9633178..e2bfb06 100644
+--- a/src/themes/nodoka/nodoka-theme.c
++++ b/src/themes/nodoka/nodoka-theme.c
+@@ -1085,16 +1085,14 @@ set_notification_timeout(GtkWindow *nw, glong timeout)
+ void set_notification_hints(GtkWindow *nw, GVariant *hints)
+ {
+ 	WindowData *windata = g_object_get_data(G_OBJECT(nw), "windata");
+-	GVariant *value = NULL, *icon_value = NULL;
++	guint8 urgency;
++	gboolean action_icons;
+ 
+ 	g_assert(windata != NULL);
+ 
+-	g_variant_lookup(hints, "urgency", "v", &value);
+-	g_variant_lookup(hints, "action-icons", "v", &icon_value);
+-
+-	if (value != NULL && g_variant_get_type(value) == G_VARIANT_TYPE_BYTE)
++	if (g_variant_lookup(hints, "urgency", "y", &urgency))
+ 	{
+-		windata->urgency = g_variant_get_byte(value);
++		windata->urgency = urgency;
+ 
+ 		if (windata->urgency == URGENCY_CRITICAL) {
+ 			gtk_window_set_title(GTK_WINDOW(nw), "Critical Notification");
+@@ -1104,9 +1102,9 @@ void set_notification_hints(GtkWindow *nw, GVariant *hints)
+ 	}
+ 
+ 	/* Determine if action-icons have been requested */
+-	if (icon_value != NULL && g_variant_get_type(icon_value) == G_VARIANT_TYPE_BOOLEAN)
++	if (g_variant_lookup(hints, "action-icons", "b", &action_icons))
+ 	{
+-		windata->action_icons = g_variant_get_boolean(icon_value);
++		windata->action_icons = action_icons;
+ 	}
+ }
+ 
+diff --git a/src/themes/slider/theme.c b/src/themes/slider/theme.c
+index 78984d0..0c9d5fc 100644
+--- a/src/themes/slider/theme.c
++++ b/src/themes/slider/theme.c
+@@ -446,16 +446,14 @@ GtkWindow* create_notification(UrlClickedCb url_clicked)
+ void set_notification_hints(GtkWindow *nw, GVariant *hints)
+ {
+ 	WindowData *windata = g_object_get_data(G_OBJECT(nw), "windata");
+-	GVariant *value = NULL, *icon_value = NULL;
++	guint8 urgency;
++	gboolean action_icons;
+ 
+ 	g_assert(windata != NULL);
+ 
+-	g_variant_lookup(hints, "urgency", "v", &value);
+-	g_variant_lookup(hints, "action-icons", "v", &icon_value);
+-
+-	if (value != NULL && g_variant_get_type(value) == G_VARIANT_TYPE_BYTE)
++	if (g_variant_lookup(hints, "urgency", "y", &urgency))
+ 	{
+-		windata->urgency = g_variant_get_byte(value);
++		windata->urgency = urgency;
+ 
+ 		if (windata->urgency == URGENCY_CRITICAL) {
+ 			gtk_window_set_title(GTK_WINDOW(nw), "Critical Notification");
+@@ -465,9 +463,9 @@ void set_notification_hints(GtkWindow *nw, GVariant *hints)
+ 	}
+ 
+ 	/* Determine if action-icons have been requested */
+-	if (icon_value != NULL && g_variant_get_type(icon_value) == G_VARIANT_TYPE_BOOLEAN)
++	if (g_variant_lookup(hints, "action-icons", "b", &action_icons))
+ 	{
+-		windata->action_icons = g_variant_get_boolean(icon_value);
++		windata->action_icons = action_icons;
+ 	}
+ }
+ 
+diff --git a/src/themes/standard/theme.c b/src/themes/standard/theme.c
+index 91147c2..d36bda3 100644
+--- a/src/themes/standard/theme.c
++++ b/src/themes/standard/theme.c
+@@ -796,16 +796,14 @@ GtkWindow* create_notification(UrlClickedCb url_clicked)
+ void set_notification_hints(GtkWindow *nw, GVariant *hints)
+ {
+ 	WindowData *windata = g_object_get_data(G_OBJECT(nw), "windata");
+-	GVariant *value = NULL, *icon_value = NULL;
++	guint8 urgency;
++	gboolean action_icons;
+ 
+ 	g_assert(windata != NULL);
+ 
+-	g_variant_lookup(hints, "urgency", "v", &value);
+-	g_variant_lookup(hints, "action-icons", "v", &icon_value);
+-
+-	if (value != NULL && g_variant_get_type(value) == G_VARIANT_TYPE_BYTE)
++	if (g_variant_lookup(hints, "urgency", "y", &urgency))
+ 	{
+-		windata->urgency = g_variant_get_byte(value);
++		windata->urgency = urgency;
+ 
+ 		if (windata->urgency == URGENCY_CRITICAL) {
+ 			gtk_window_set_title(GTK_WINDOW(nw), "Critical Notification");
+@@ -815,9 +813,9 @@ void set_notification_hints(GtkWindow *nw, GVariant *hints)
+ 	}
+ 
+ 	/* Determine if action-icons have been requested */
+-	if (icon_value != NULL && g_variant_get_type(icon_value) == G_VARIANT_TYPE_BOOLEAN)
++	if (g_variant_lookup(hints, "action-icons", "b", &action_icons))
+ 	{
+-		windata->action_icons = g_variant_get_boolean(icon_value);
++		windata->action_icons = action_icons;
+ 	}
+ }
+ 
