@@ -1,4 +1,4 @@
-Origin: https://github.com/trism/mate-notification-daemon/commits/master
+Origin: https://github.com/mate-desktop/mate-notification-daemon/pull/156
 Author: Jason Conti <jason.conti@gmail.com>
 Description: Add do-not-disturb setting
 
@@ -142,7 +142,7 @@ index 280fb8d..30e39d4 100644
                    <packing>
                      <property name="expand">True</property>
 diff --git a/src/daemon/daemon.c b/src/daemon/daemon.c
-index c418809..4a11c2f 100644
+index 21c3f1d..d63545b 100644
 --- a/src/daemon/daemon.c
 +++ b/src/daemon/daemon.c
 @@ -873,9 +873,8 @@ static void _calculate_timeout(NotifyDaemon* daemon, NotifyTimeout* nt, int time
@@ -200,7 +200,7 @@ index c418809..4a11c2f 100644
  	if (id > 0)
  	{
  		nt = (NotifyTimeout *) g_hash_table_lookup (daemon->notification_hash, &id);
-@@ -1376,11 +1398,6 @@ static gboolean notify_daemon_notify_handler(NotifyDaemonNotifications *object,
+@@ -1374,11 +1396,6 @@ static gboolean notify_daemon_notify_handler(NotifyDaemonNotifications *object,
  		}
  	}
  
@@ -209,9 +209,9 @@ index c418809..4a11c2f 100644
 -	sound_enabled = g_settings_get_boolean (gsettings, GSETTINGS_KEY_SOUND_ENABLED);
 -	g_object_unref (gsettings);
 -
- 	if (g_variant_lookup(hints, "suppress-sound", "v", &data)) {
- 		if (g_variant_get_type (data) == G_VARIANT_TYPE_BOOLEAN )
- 		{
+ 	if (g_variant_lookup(hints, "suppress-sound", "@*", &data))
+ 	{
+ 		if (g_variant_is_of_type (data, G_VARIANT_TYPE_BOOLEAN))
 diff --git a/src/daemon/daemon.h b/src/daemon/daemon.h
 index 256579e..98f7f4d 100644
 --- a/src/daemon/daemon.h
