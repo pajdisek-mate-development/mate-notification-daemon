@@ -16,6 +16,7 @@ Build-Depends: autoconf-archive,
                libnotify-dev,
                libwnck-3-dev,
                libx11-dev,
+               libxml2-utils,
                mate-common (>= 1.18),
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
