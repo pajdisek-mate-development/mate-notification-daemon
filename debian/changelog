@@ -1,3 +1,15 @@
+mate-notification-daemon (1.24.0-1) UNRELEASED; urgency=medium
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Add Rules-Requires-Root: field and set it to no.
+    + Bump Standards-Version: to 4.5.0. No changes needed.
+  * debian/upstream/metadata:
+    + Drop obsolete fields Contact: and Name:.
+    + Append .git suffix to URLs in Repository: field.
+
+ -- Martin Wimpress <martin.wimpress@ubuntu.com>  Wed, 12 Feb 2020 22:07:51 +0000
+
 mate-notification-daemon (1.22.1-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
