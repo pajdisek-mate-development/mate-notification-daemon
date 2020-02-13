@@ -1,4 +1,4 @@
-mate-notification-daemon (1.24.0-1) UNRELEASED; urgency=medium
+mate-notification-daemon (1.24.0-1) unstable; urgency=medium
 
   [ Mike Gabriel ]
   * debian/control:
@@ -10,8 +10,16 @@ mate-notification-daemon (1.24.0-1) UNRELEASED; urgency=medium
 
   [ Martin Wimpress ]
   * New upstream release.
+  * debian/patches:
+    + Drop 1000_do_not_disturb.patch. Applied upstream.
+  * debian/copyright:
+    + Update copyright attributions.
+  * debian/control:
+    + Add B-D libxml2-utils.
+  * debian/mate-notification-daemon-common.install:
+    + Drop obsolete reference to usr/share/mate-notification-daemon/.
 
- -- Martin Wimpress <martin.wimpress@ubuntu.com>  Wed, 12 Feb 2020 22:07:51 +0000
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 13 Feb 2020 20:28:55 +0100
 
 mate-notification-daemon (1.22.1-1) unstable; urgency=medium
 
