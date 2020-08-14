@@ -1,3 +1,9 @@
+mate-notification-daemon (1.24.1-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Martin Wimpress <martin.wimpress@ubuntu.com>  Fri, 14 Aug 2020 15:37:47 +0100
+
 mate-notification-daemon (1.24.0-1) unstable; urgency=medium
 
   [ Mike Gabriel ]
