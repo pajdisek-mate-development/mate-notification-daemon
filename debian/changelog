@@ -1,8 +1,15 @@
-mate-notification-daemon (1.24.1-1) UNRELEASED; urgency=medium
+mate-notification-daemon (1.24.1-1) unstable; urgency=medium
 
-  * New upstream release
+  [ Martin Wimpress ]
+  * New upstream release.
+    - Filter out html tags in notifications. (Closes: #903597).
 
- -- Martin Wimpress <martin.wimpress@ubuntu.com>  Fri, 14 Aug 2020 15:37:47 +0100
+  [ Mike Gabriel ]
+  * debian/control:
+    + Bump DH compat level to version 13.
+    + Switch B-D from libxml2-utils to libxml2-dev.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 18 Aug 2020 14:32:51 +0200
 
 mate-notification-daemon (1.24.0-1) unstable; urgency=medium
 
