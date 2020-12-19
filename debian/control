@@ -18,6 +18,9 @@ Build-Depends: debhelper-compat (= 13),
                libxml2-dev,
                libxml2-utils,
                mate-common (>= 1.24.0-1~),
+               gir1.2-matepanelapplet-4.0,
+               gir1.2-mate-desktop,
+               libmate-desktop-dev,
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Homepage: http://www.mate-desktop.org/
